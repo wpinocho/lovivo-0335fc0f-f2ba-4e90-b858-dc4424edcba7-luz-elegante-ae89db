@@ -52,7 +52,9 @@ export const IndexUI = ({ logic }: IndexUIProps) => {
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
           <div className="max-w-3xl">
-            <h1 style={{ letterSpacing: '0px' }} className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-spectrum bg-clip-text text-transparent">Iluminación que Cuida tu Salud! ñá!#$&</h1>
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-spectrum bg-clip-text text-transparent">
+              Iluminación que Cuida tu Salud
+            </h1>
             <p className="text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed">
               Descubre lámparas diseñadas con tecnología circadiana. Sin parpadeo, bajo EMF y espectro saludable que respeta tu ritmo natural.
             </p>

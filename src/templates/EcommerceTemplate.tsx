@@ -46,40 +46,45 @@ export const EcommerceTemplate = ({
   const { hasCollections, loading: loadingCollections } = useCollections()
 
   const header = (
-    <div className={`py-2 ${headerClassName}`}>
+    <div className={`py-4 backdrop-blur-xl bg-background/80 ${headerClassName}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <BrandLogoLeft />
+          <div className="hover:opacity-80 transition-opacity">
+            <BrandLogoLeft />
+          </div>
 
           {/* Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <nav className="flex space-x-6">
+            <nav className="flex space-x-8">
               {!loadingCollections && hasCollections && (
                 <ScrollLink 
                   to="/#collections" 
-                  className="text-foreground/70 hover:text-foreground transition-colors"
+                  className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors relative group"
                 >
                   Colecciones
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-sunset group-hover:w-full transition-all duration-300"></span>
                 </ScrollLink>
               )}
               <ScrollLink 
                 to="/#products" 
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors relative group"
               >
                 Productos
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-sunset group-hover:w-full transition-all duration-300"></span>
               </ScrollLink>
               <Link 
                 to="/blog" 
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors relative group"
               >
                 Blog
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-sunset group-hover:w-full transition-all duration-300"></span>
               </Link>
             </nav>
           </div>
 
           {/* Profile & Cart */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
             <ProfileMenu />
             
             {showCart && (
@@ -87,12 +92,12 @@ export const EcommerceTemplate = ({
                 variant="ghost"
                 size="icon"
                 onClick={openCart}
-                className="relative"
+                className="relative hover:bg-primary/10 transition-colors"
                 aria-label="Ver carrito"
               >
                 <ShoppingCart className="h-5 w-5" />
                 {totalItems > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-gradient-sunset text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-lg">
                     {totalItems > 99 ? '99+' : totalItems}
                   </span>
                 )}
@@ -104,7 +109,7 @@ export const EcommerceTemplate = ({
         {/* Page Title */}
         {pageTitle && (
           <div className="mt-6">
-            <h1 className="text-3xl font-bold text-foreground">
+            <h1 className="text-3xl font-bold bg-gradient-sunset bg-clip-text text-transparent">
               {pageTitle}
             </h1>
           </div>
@@ -114,30 +119,36 @@ export const EcommerceTemplate = ({
   )
 
   const footer = (
-    <div className={`bg-black text-white py-12 ${footerClassName}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className={`relative py-16 overflow-hidden ${footerClassName}`}>
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-foreground via-foreground/95 to-foreground/90"></div>
+      <div className="absolute inset-0 bg-gradient-sunset opacity-10"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <BrandLogoLeft />
-            <p className="mt-4 text-white/70">
-              Tu tienda online de confianza
+            <div className="invert">
+              <BrandLogoLeft />
+            </div>
+            <p className="mt-4 text-background/70 text-sm">
+              Iluminación inteligente que cuida tu salud y respeta tu ritmo natural
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Enlaces</h3>
-            <div className="space-y-2">
+            <h3 className="font-bold mb-4 text-background text-lg">Enlaces</h3>
+            <div className="space-y-3">
               <Link 
                 to="/" 
-                className="block text-white/70 hover:text-white transition-colors"
+                className="block text-background/70 hover:text-background transition-colors text-sm"
               >
                 Inicio
               </Link>
               <Link 
                 to="/blog" 
-                className="block text-white/70 hover:text-white transition-colors"
+                className="block text-background/70 hover:text-background transition-colors text-sm"
               >
                 Blog
               </Link>
@@ -146,13 +157,15 @@ export const EcommerceTemplate = ({
 
           {/* Social Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Síguenos</h3>
+            <h3 className="font-bold mb-4 text-background text-lg">Síguenos</h3>
             <SocialLinks />
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-white/20 text-center text-white/70">
-          <p>&copy; 2025 Tu Tienda. Todos los derechos reservados.</p>
+        <div className="mt-12 pt-8 border-t border-background/20 text-center">
+          <p className="text-background/60 text-sm">
+            &copy; 2025 Spectrum. Todos los derechos reservados.
+          </p>
         </div>
       </div>
     </div>

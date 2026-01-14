@@ -11,7 +11,7 @@ import type { UseIndexLogicReturn } from '@/components/headless/HeadlessIndex';
 /**
  * EDITABLE UI - IndexUI
  * 
- * Interfaz completamente editable para la página principal.
+ * Interfaz completamente editable para la pÃ¡gina principal.
  * El agente IA puede modificar colores, textos, layout, etc.
  */
 
@@ -52,11 +52,9 @@ export const IndexUI = ({ logic }: IndexUIProps) => {
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
           <div className="max-w-3xl">
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-spectrum bg-clip-text text-transparent">
-              Iluminación que Cuida tu Salud
-            </h1>
+            <h1 style={{ letterSpacing: '0px' }} className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-spectrum bg-clip-text text-transparent">Iluminación que Cuida tu Salud ñ!"#$%%&/()ié</h1>
             <p className="text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed">
-              Descubre lámparas diseñadas con tecnología circadiana. Sin parpadeo, bajo EMF y espectro saludable que respeta tu ritmo natural.
+              Descubre lÃ¡mparas diseÃ±adas con tecnologÃ­a circadiana. Sin parpadeo, bajo EMF y espectro saludable que respeta tu ritmo natural.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
@@ -89,7 +87,7 @@ export const IndexUI = ({ logic }: IndexUIProps) => {
                 Nuestras Colecciones
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Cada colección diseñada para un propósito: mejorar tu bienestar con luz inteligente
+                Cada colecciÃ³n diseÃ±ada para un propÃ³sito: mejorar tu bienestar con luz inteligente
               </p>
             </div>
             
@@ -118,7 +116,7 @@ export const IndexUI = ({ logic }: IndexUIProps) => {
                 }
               </h2>
               <p className="text-muted-foreground">
-                Tecnología avanzada para tu bienestar diario
+                TecnologÃ­a avanzada para tu bienestar diario
               </p>
             </div>
             {selectedCollectionId && (
